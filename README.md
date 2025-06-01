@@ -45,6 +45,9 @@ Optionally, display a confusion matrix or sample predictions.
 
 ## PROGRAM
 ```
+!pip uninstall -y torch torchvision torchaudio
+!pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -54,7 +57,7 @@ from torchvision.utils import make_grid
 
 import numpy as np
 import pandas as pd 
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix,classification_report
 import matplotlib.pyplot as plt
 %matplotlib inline
 
@@ -202,13 +205,13 @@ test_losses = [t.detach().numpy() for t in test_losses]
 
 plt.plot(train_losses, label='training loss')
 plt.plot(test_losses, label='validation loss')
-plt.title('Loss at the End of Each Epoch\nBy Richard')
+plt.title('Loss at the End of Each Epoch\nBy JAIGANESH')
 plt.legend();
 plt.show()
 
 plt.plot([t/600 for t in train_correct], label='training accuracy')
 plt.plot([t/100 for t in test_correct], label='validation accuracy')
-plt.title('Accuracy at the end of each epoch\nBy Richard')
+plt.title('Accuracy at the end of each epoch\nBy JAIGANESH')
 plt.legend();
 plt.show()
 
@@ -232,7 +235,7 @@ print()
 
 # print the confusion matrix
 print(confusion_matrix(predicted.view(-1), y_test.view(-1)))
-print("RICHARDSON A")
+print("JAIGANESH S")
 
 # single image for test 
 plt.imshow(test_data[2019][0].reshape(28,28))
@@ -249,7 +252,7 @@ y_true = y_test.view(-1).cpu().numpy()
 y_pred = predicted.view(-1).cpu().numpy()
 
 # Print classification report
-print("Classification Report by Richard\n")
+print("Classification Report by JAIGANESH\n")
 print(classification_report(y_true, y_pred))
 
 
