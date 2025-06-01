@@ -274,19 +274,23 @@ test_data[333][1]
 ### OUTPUT
 
 ## Training Loss per Epoch
-<img width="639" alt="Screenshot 2025-04-19 at 10 59 33 AM" src="https://github.com/user-attachments/assets/79e3590e-797a-48d3-b9d5-d40ef61814c9" />
+![image](https://github.com/user-attachments/assets/f787a125-a266-490d-a32e-c4f436faf88d)
+
 
 
 ## Confusion Matrix
-<img width="519" alt="Screenshot 2025-04-19 at 11 01 08 AM" src="https://github.com/user-attachments/assets/dd60b133-580e-478f-a872-cad74d491cf4" />
+![image](https://github.com/user-attachments/assets/989ba744-6535-491b-8814-c3f6b0b7a02e)
+
 
 
 ## Classification Report
-<img width="578" alt="Screenshot 2025-04-19 at 11 07 23 AM" src="https://github.com/user-attachments/assets/f00ee6bc-5488-444a-a992-d8dbced03072" />
+![image](https://github.com/user-attachments/assets/ecf3ac71-848e-405a-91dd-3c1721b68412)
+
 
 
 ### New Sample Data Prediction
-<img width="481" alt="Screenshot 2025-04-19 at 11 02 35 AM" src="https://github.com/user-attachments/assets/0d0d65e5-8e18-4a60-8270-8aacedc65a39" />
+![image](https://github.com/user-attachments/assets/d256b4f5-0d75-4683-84aa-eb3708678fd0)
+
 
 ## RESULT
 The CNN model achieved high accuracy on the MNIST dataset, with training and validation losses showing good convergence. The classification report and confusion matrix confirmed strong performance across all digits, with minimal misclassifications. Overall, the model performs reliably in handwritten digit recognition.
