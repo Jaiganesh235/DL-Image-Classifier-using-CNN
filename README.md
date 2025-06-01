@@ -264,7 +264,7 @@ new_prediction.argmax()
 
 test_data[333][1]
 ```
-### Name:JAIGANESH S
+### Name: JAIGANESH S
 
 ### Register Number: 212222240037
 
