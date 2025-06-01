@@ -1,50 +1,6 @@
-# DL-Convolutional Deep Neural Network for Image Classification
+!pip uninstall -y torch torchvision torchaudio
+!pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-## AIM
-To develop a convolutional neural network (CNN) classification model for the given dataset.
-
-## THEORY
-The MNIST dataset consists of 70,000 grayscale images of handwritten digits (0-9), each of size 28×28 pixels. The task is to classify these images into their respective digit categories. CNNs are particularly well-suited for image classification tasks as they can automatically learn spatial hierarchies of features through convolutional layers, pooling layers, and fully connected layers.
-
-## Neural Network Model
-Include the neural network model diagram.
-
-## DESIGN STEPS
-### STEP 1: Define the problem
-Classify handwritten digits (0–9) using the MNIST dataset.
-
-### STEP 2: Import libraries and dataset
-Import required libraries such as TensorFlow/Keras, NumPy, and Matplotlib.
-Load the MNIST dataset using keras.datasets.mnist.load_data().
-
-
-### STEP 3: Preprocess the data
-Normalize the image pixel values (scale from 0-255 to 0-1).
-Reshape the images to match CNN input shape.
-
-
-### STEP 4: Build the CNN model
-Initialize a Sequential model.
-Add convolutional layers with activation (ReLU), followed by pooling layers.
-Flatten the output and add Dense layers.
-Use a softmax layer for classification.
-
-
-### STEP 5: Compile and train the model
-Compile the model with an optimizer (e.g., Adam), loss function (e.g., categorical crossentropy), and metrics (accuracy).
-Train the model using training data and validate using validation split or test data.
-
-
-### STEP 6: Evaluate and visualize results
-Evaluate the model on test data and print accuracy.
-Plot training/validation loss and accuracy curves.
-Optionally, display a confusion matrix or sample predictions.
-
-
-
-
-## PROGRAM
-```
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -54,7 +10,7 @@ from torchvision.utils import make_grid
 
 import numpy as np
 import pandas as pd 
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix,classification_report
 import matplotlib.pyplot as plt
 %matplotlib inline
 
@@ -202,13 +158,13 @@ test_losses = [t.detach().numpy() for t in test_losses]
 
 plt.plot(train_losses, label='training loss')
 plt.plot(test_losses, label='validation loss')
-plt.title('Loss at the End of Each Epoch\nBy Richard')
+plt.title('Loss at the End of Each Epoch\nBy JAIGANESH')
 plt.legend();
 plt.show()
 
 plt.plot([t/600 for t in train_correct], label='training accuracy')
 plt.plot([t/100 for t in test_correct], label='validation accuracy')
-plt.title('Accuracy at the end of each epoch\nBy Richard')
+plt.title('Accuracy at the end of each epoch\nBy JAIGANESH')
 plt.legend();
 plt.show()
 
@@ -249,7 +205,7 @@ y_true = y_test.view(-1).cpu().numpy()
 y_pred = predicted.view(-1).cpu().numpy()
 
 # Print classification report
-print("Classification Report by Richard\n")
+print("Classification Report by JAIGANESH\n")
 print(classification_report(y_true, y_pred))
 
 
@@ -263,27 +219,3 @@ with torch.no_grad():
 new_prediction.argmax()
 
 test_data[333][1]
-```
-### Name: JAIGANESH S
-
-### Register Number: 212222240037
-
-### OUTPUT
-
-## Training Loss per Epoch
-<img width="639" alt="Screenshot 2025-04-19 at 10 59 33 AM" src="https://github.com/user-attachments/assets/79e3590e-797a-48d3-b9d5-d40ef61814c9" />
-
-
-## Confusion Matrix
-<img width="519" alt="Screenshot 2025-04-19 at 11 01 08 AM" src="https://github.com/user-attachments/assets/dd60b133-580e-478f-a872-cad74d491cf4" />
-
-
-## Classification Report
-<img width="578" alt="Screenshot 2025-04-19 at 11 07 23 AM" src="https://github.com/user-attachments/assets/f00ee6bc-5488-444a-a992-d8dbced03072" />
-
-
-### New Sample Data Prediction
-<img width="481" alt="Screenshot 2025-04-19 at 11 02 35 AM" src="https://github.com/user-attachments/assets/0d0d65e5-8e18-4a60-8270-8aacedc65a39" />
-
-## RESULT
-The CNN model achieved high accuracy on the MNIST dataset, with training and validation losses showing good convergence. The classification report and confusion matrix confirmed strong performance across all digits, with minimal misclassifications. Overall, the model performs reliably in handwritten digit recognition.
